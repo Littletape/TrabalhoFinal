@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aluno.trabalhofinal.ClientesActivity"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Clientes"
+        android:id="@+id/txtListaClientes"
+        android:layout_gravity="center_horizontal" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="430dp">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="410dp"
+            android:id="@+id/listView"
+            android:layout_gravity="center_horizontal" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Novo"
+            android:layout_marginLeft="60dp"
+            android:width="120dp"
+            android:id="@+id/btNovo"
+            android:background="#3F51B5"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alterar"
+            android:layout_marginLeft="20dp"
+            android:width="120dp"
+            android:id="@+id/btAlterar"
+            android:background="#3F51B5"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
