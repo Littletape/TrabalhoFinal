@@ -1,5 +1,6 @@
 package com.example.aluno.trabalhofinal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -48,5 +49,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickBtClientesActivity (View view){
+        Intent intent = new Intent(this, ClientesActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickBtProdutosActivity (View view){
+        Intent intent = new Intent(this, ProdutosActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickBtListadesejosActivity (View view){
+        Intent intent = new Intent(this, ListaDesejosActivity.class);
+        startActivity(intent);
     }
 }
