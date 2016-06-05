@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/etNascimento" />
+        android:id="@+id/etData" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -84,7 +84,8 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/rgSexo">
 
             <RadioButton
                 android:layout_width="wrap_content"

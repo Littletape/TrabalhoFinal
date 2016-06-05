@@ -1,27 +1,25 @@
 package com.example.aluno.trabalhofinal.Helper;
 
 import android.widget.EditText;
+import com.example.aluno.trabalhofinal.ProdutosActivity;
+import com.example.aluno.trabalhofinal.R;
 
 import com.example.aluno.trabalhofinal.Model.Produto;
-import com.example.aluno.trabalhofinal.R;
 
 /**
  * Created by Anderson on 04/06/2016.
  */
 public class FormHelperProduto {
-    FormActivity activity;
+    ProdutosActivity activity;
     private EditText etMarca, etModelo, etPreco;
 
 
-    public FormHelperProduto(FormActivity formActivity){
+    public FormHelperProduto(ProdutosActivity formActivity){
         activity = formActivity;
 
-        etMarca = (EditText)activity.findViewById
-                (R.id.etMarca);
-        etModelo = (EditText)activity.findViewById
-                (R.id.etModelo);
-        etPreco = (EditText)activity.findViewById
-                (R.id.etPreco);
+        etMarca = (EditText)activity.findViewById(R.id.etMarca);
+        etModelo = (EditText)activity.findViewById(R.id.etModelo);
+        etPreco = (EditText)activity.findViewById(R.id.etPreco);
     }
 
     public Produto getProduto(){

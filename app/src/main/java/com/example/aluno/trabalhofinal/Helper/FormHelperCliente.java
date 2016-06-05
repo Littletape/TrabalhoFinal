@@ -1,6 +1,8 @@
 package com.example.aluno.trabalhofinal.Helper;
 
 import android.widget.EditText;
+import com.example.aluno.trabalhofinal.ClientesActivity;
+import com.example.aluno.trabalhofinal.R;
 
 import com.example.aluno.trabalhofinal.Model.Cliente;
 
@@ -8,18 +10,18 @@ import com.example.aluno.trabalhofinal.Model.Cliente;
  * Created by Anderson on 04/06/2016.
  */
 public class FormHelperCliente {
-    FormActivity activity;
-    private EditText etNome,etEmail, etTelefone, etData, etSexo ;
+    ClientesActivity activity;
+    private EditText etNome,etEmail, etTelefone, etData, rgSexo ;
 
 
-    public FormHelperCliente(FormActivity formActivity){
+    public FormHelperCliente(ClientesActivity formActivity){
         activity = formActivity;
 
         etNome = (EditText)activity.findViewById(R.id.etNome);
-        etEmail = (EditText)activity.findViewById(R.id.etEmail);
+        etEmail = (EditText)activity.findViewById(R.id.etEMail);
         etTelefone = (EditText)activity.findViewById(R.id.etTelefone);
         etData = (EditText)activity.findViewById(R.id.etData);
-        etSexo = (EditText)activity.findViewById(R.id.etSexo);
+        rgSexo = (EditText)activity.findViewById(R.id.rgSexo);
     }
 
     public Cliente getCliente(){
@@ -28,7 +30,7 @@ public class FormHelperCliente {
         cliente.setEmail(String.valueOf(etEmail.getText()));
         cliente.setTelefone(String.valueOf(etTelefone.getText()));
         cliente.setData(String.valueOf(etData.getText()));
-        cliente.setSexo(String.valueOf(etSexo.getText()));
+        cliente.setSexo(String.valueOf(rgSexo.getText()));
         return cliente;
     }
 
@@ -37,6 +39,6 @@ public class FormHelperCliente {
         etEmail.setText(cliente.getEmail());
         etTelefone.setText(cliente.getTelefone());
         etData.setText(cliente.getEmail());
-        etSexo.setText(cliente.getEmail());
+        rgSexo.setText(cliente.getEmail());
     }
 }
