@@ -1,6 +1,9 @@
 package com.example.aluno.trabalhofinal.Helper;
 
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+
 import com.example.aluno.trabalhofinal.ClientesActivity;
 import com.example.aluno.trabalhofinal.R;
 
@@ -11,7 +14,9 @@ import com.example.aluno.trabalhofinal.Model.Cliente;
  */
 public class FormHelperCliente {
     ClientesActivity activity;
-    private EditText etNome,etEmail, etTelefone, etData, rgSexo ;
+    private EditText etNome,etEmail, etTelefone, etData;
+    private RadioGroup rgSexo;
+    String sexo;
 
 
     public FormHelperCliente(ClientesActivity formActivity){
@@ -21,7 +26,7 @@ public class FormHelperCliente {
         etEmail = (EditText)activity.findViewById(R.id.etEMail);
         etTelefone = (EditText)activity.findViewById(R.id.etTelefone);
         etData = (EditText)activity.findViewById(R.id.etData);
-        rgSexo = (EditText)activity.findViewById(R.id.rgSexo);
+        rgSexo = (RadioGroup)activity.findViewById(R.id.rgSexo);
     }
 
     public Cliente getCliente(){
@@ -30,8 +35,8 @@ public class FormHelperCliente {
         cliente.setEmail(String.valueOf(etEmail.getText()));
         cliente.setTelefone(String.valueOf(etTelefone.getText()));
         cliente.setData(String.valueOf(etData.getText()));
-        cliente.setSexo(String.valueOf(rgSexo.getText()));
-        return cliente;
+        cliente.setSexo(String.valueOf(rgSexo.getCheckedRadioButtonId()));
+
     }
 
     public void setCliente(Cliente cliente) {
@@ -39,6 +44,12 @@ public class FormHelperCliente {
         etEmail.setText(cliente.getEmail());
         etTelefone.setText(cliente.getTelefone());
         etData.setText(cliente.getEmail());
-        rgSexo.setText(cliente.getEmail());
+        //rgSexo.setText(cliente.getSexo());
+        switch (rgSexo.getCheckedRadioButtonId()){
+            case R.id.rbFeminino:
+                sexo = "Feminino";
+            case R.id.rbMasculino:
+                sexo = "Masculino";
+        }
     }
 }
