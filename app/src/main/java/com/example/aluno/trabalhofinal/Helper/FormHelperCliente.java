@@ -5,6 +5,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 
 import com.example.aluno.trabalhofinal.ClientesActivity;
+import com.example.aluno.trabalhofinal.InfPessoaisActivity;
 import com.example.aluno.trabalhofinal.R;
 
 import com.example.aluno.trabalhofinal.Model.Cliente;
@@ -13,13 +14,13 @@ import com.example.aluno.trabalhofinal.Model.Cliente;
  * Created by Anderson on 04/06/2016.
  */
 public class FormHelperCliente {
-    ClientesActivity activity;
+    InfPessoaisActivity activity;
     private EditText etNome,etEmail, etTelefone, etData;
     private RadioGroup rgSexo;
     String sexo;
 
 
-    public FormHelperCliente(ClientesActivity formActivity){
+    public FormHelperCliente(InfPessoaisActivity formActivity){
         activity = formActivity;
 
         etNome = (EditText)activity.findViewById(R.id.etNome);
@@ -36,7 +37,7 @@ public class FormHelperCliente {
         cliente.setTelefone(String.valueOf(etTelefone.getText()));
         cliente.setData(String.valueOf(etData.getText()));
         cliente.setSexo(String.valueOf(rgSexo.getCheckedRadioButtonId()));
-
+    return cliente;
     }
 
     public void setCliente(Cliente cliente) {
