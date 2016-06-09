@@ -27,17 +27,17 @@ public class ClientesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clientes);
-       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
         lvClientes = (ListView)findViewById(R.id.listView);
         lvClientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -52,6 +52,7 @@ public class ClientesActivity extends AppCompatActivity {
         });
 
         registerForContextMenu(lvClientes);
+
     }
 
 
@@ -119,5 +120,6 @@ public class ClientesActivity extends AppCompatActivity {
         dao.deletaCliente(cliente);
         carregaLista();
     }
+
 
 }
