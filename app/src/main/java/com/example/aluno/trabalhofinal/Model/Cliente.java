@@ -62,4 +62,9 @@ public class Cliente implements Serializable {
     public void setIdCliente(long idCliente) {
         this.idCliente = idCliente;
     }
+
+    @Override
+    public String toString() {
+        return getIdCliente() + " - " + getNome();
+    }
 }

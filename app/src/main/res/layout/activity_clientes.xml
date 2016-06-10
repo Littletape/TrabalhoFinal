@@ -16,18 +16,12 @@
         android:id="@+id/txtListaClientes"
         android:layout_gravity="center_horizontal" />
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minHeight="430dp"
-        android:fillViewport="false"
-        android:id="@+id/lvClientes">
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="410dp"
+            android:layout_height="400dp"
             android:id="@+id/listView"
             android:layout_gravity="center_horizontal" />
-    </ScrollView>
+
 
     <LinearLayout
         android:layout_width="wrap_content"

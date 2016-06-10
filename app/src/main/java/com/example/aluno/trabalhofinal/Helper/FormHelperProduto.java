@@ -1,6 +1,8 @@
 package com.example.aluno.trabalhofinal.Helper;
 
 import android.widget.EditText;
+
+import com.example.aluno.trabalhofinal.CadProdutosActivity;
 import com.example.aluno.trabalhofinal.ProdutosActivity;
 import com.example.aluno.trabalhofinal.R;
 
@@ -10,11 +12,11 @@ import com.example.aluno.trabalhofinal.Model.Produto;
  * Created by Anderson on 04/06/2016.
  */
 public class FormHelperProduto {
-    ProdutosActivity activity;
+    CadProdutosActivity activity;
     private EditText etMarca, etModelo, etPreco;
 
 
-    public FormHelperProduto(ProdutosActivity formActivity){
+    public FormHelperProduto(CadProdutosActivity formActivity){
         activity = formActivity;
 
         etMarca = (EditText)activity.findViewById(R.id.etMarca);

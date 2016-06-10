@@ -14,16 +14,13 @@
         android:id="@+id/txtListaProdutos"
         android:layout_gravity="center_horizontal" />
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minHeight="430dp">
+
         <ListView
             android:layout_width="match_parent"
             android:layout_height="410dp"
-            android:id="@+id/listView"
+            android:id="@+id/lvProdutos"
             android:layout_gravity="center_horizontal" />
-    </ScrollView>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -39,7 +36,8 @@
         android:width="120dp"
         android:id="@+id/btNovo"
         android:background="#3F51B5"
-        android:textColor="#ffffff"/>
+        android:textColor="#ffffff"
+        android:onClick="onClickNovo" />
 
     <Button
         android:layout_width="wrap_content"

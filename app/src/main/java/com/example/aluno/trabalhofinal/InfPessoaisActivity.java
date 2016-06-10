@@ -1,6 +1,7 @@
 package com.example.aluno.trabalhofinal;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +10,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.aluno.trabalhofinal.Helper.FormHelperCliente;
 import com.example.aluno.trabalhofinal.Model.Cliente;
 import com.example.aluno.trabalhofinal.dao.ClientesDAO;
+
+import java.io.IOException;
 
 public class InfPessoaisActivity extends AppCompatActivity {
     private FormHelperCliente helper;
@@ -23,17 +27,6 @@ public class InfPessoaisActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inf_pessoais);
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         Intent intent = getIntent();
         helper = new FormHelperCliente(this);
@@ -58,7 +51,11 @@ public class InfPessoaisActivity extends AppCompatActivity {
             dao.alteraCliente(cliente);
         }
         else{
-            dao.insereCliente(cliente);
+           try {
+               dao.insereCliente(cliente);
+           }catch(Exception e){
+              Toast.makeText(this, "Erro ao inserir",Toast.LENGTH_SHORT).show();
+           }
         }
 
         finish();

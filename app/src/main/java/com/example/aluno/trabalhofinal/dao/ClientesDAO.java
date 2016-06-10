@@ -43,7 +43,6 @@ public class ClientesDAO extends SQLiteOpenHelper {
     public void insereCliente(Cliente cliente){
 
         ContentValues dados = new ContentValues();
-        dados.put("idCliente", cliente.getIdCliente());
         dados.put("nome", cliente.getNome());
         dados.put("email", cliente.getEmail());
         dados.put("telefone", cliente.getTelefone());
