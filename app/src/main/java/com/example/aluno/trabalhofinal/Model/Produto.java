@@ -43,3 +43,9 @@ public class Produto implements Serializable {
         this.preco = preco;
     }
 }
+
+    @Override
+    public String toString() {
+        return getIdProduto() + " - " + getMarca();
+    }
+}
