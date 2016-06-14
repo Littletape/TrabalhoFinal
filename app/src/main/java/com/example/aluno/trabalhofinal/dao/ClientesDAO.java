@@ -17,9 +17,7 @@ import java.util.List;
 public class ClientesDAO extends SQLiteOpenHelper {
     private final String bdName = "TrabalhoFinal";
 
-    public ClientesDAO(Context context) {
-        super(context, "TrabalhoFinal", null, 1);
-    }
+    public ClientesDAO(Context context) { super(context, "TrabalhoFinal", null, 1); }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
