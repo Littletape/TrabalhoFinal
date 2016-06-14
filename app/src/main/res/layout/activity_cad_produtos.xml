@@ -62,5 +62,6 @@
         android:id="@+id/btSalvarProd"
         android:layout_marginTop="100dp"
         android:background="#3F51B5"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:onClick="onClickSalvar" />
 </LinearLayout>
