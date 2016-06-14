@@ -8,9 +8,7 @@ import android.widget.Toast;
 
 import com.example.aluno.trabalhofinal.Helper.FormHelperCliente;
 import com.example.aluno.trabalhofinal.Model.Cliente;
-import com.example.aluno.trabalhofinal.dao.ClientesDAO;
-
-import java.io.IOException;
+import com.example.aluno.trabalhofinal.dao.DAO;
 
 public class InfPessoaisActivity extends AppCompatActivity {
     private FormHelperCliente helper;
@@ -38,7 +36,7 @@ public class InfPessoaisActivity extends AppCompatActivity {
     public void onClickSalvar(View view){
         Cliente cliente = helper.getCliente();
 
-        ClientesDAO dao = new ClientesDAO(this);
+        DAO dao = new DAO(this);
 
         if(alterar){
             cliente.setIdCliente(idCliente);

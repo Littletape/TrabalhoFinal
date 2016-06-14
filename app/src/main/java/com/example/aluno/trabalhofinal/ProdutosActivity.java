@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.aluno.trabalhofinal.Model.Produto;
-import com.example.aluno.trabalhofinal.dao.ProdutosDAO;
+import com.example.aluno.trabalhofinal.dao.DAO;
 
 import java.util.List;
 
@@ -47,7 +47,7 @@ public class ProdutosActivity extends AppCompatActivity {
     }
 
     private void carregaLista() {
-        ProdutosDAO dao = new ProdutosDAO(this);
+        DAO dao = new DAO(this);
         List<Produto> produtos = dao.getProduto();
         ArrayAdapter<Produto> adapter = new ArrayAdapter<Produto>
                 (this, android.R.layout.simple_list_item_1, produtos);
@@ -100,7 +100,7 @@ public class ProdutosActivity extends AppCompatActivity {
     }
 
     private void deletarProduto(Produto produto) {
-        ProdutosDAO dao = new ProdutosDAO(this);
+        DAO dao = new DAO(this);
         dao.deletaProduto(produto);
         carregaLista();
     }

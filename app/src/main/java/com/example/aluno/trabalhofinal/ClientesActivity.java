@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.aluno.trabalhofinal.Model.Cliente;
-import com.example.aluno.trabalhofinal.dao.ClientesDAO;
+import com.example.aluno.trabalhofinal.dao.DAO;
 
 import java.util.List;
 
@@ -49,7 +49,7 @@ public class ClientesActivity extends AppCompatActivity {
     }
 
     private void carregaLista() {
-        ClientesDAO dao = new ClientesDAO(this);
+        DAO dao = new DAO(this);
         List<Cliente> cliente = dao.getCliente();
         ArrayAdapter<Cliente> adapter = new ArrayAdapter<Cliente>
                 (this, android.R.layout.simple_list_item_1, cliente);
@@ -102,7 +102,7 @@ public class ClientesActivity extends AppCompatActivity {
     }
 
     private void deletarCliente(Cliente cliente) {
-        ClientesDAO dao = new ClientesDAO(this);
+        DAO dao = new DAO(this);
         dao.deletaCliente(cliente);
         carregaLista();
     }

@@ -7,17 +7,20 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.aluno.trabalhofinal.Model.Cliente;
+import com.example.aluno.trabalhofinal.Model.Produto;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Anderson on 04/06/2016.
+ * Created by Anderson Cardoso on 14/06/2016.
  */
-public class ClientesDAO extends SQLiteOpenHelper {
+public class DAO extends SQLiteOpenHelper {
     private final String bdName = "TrabalhoFinal";
 
-    public ClientesDAO(Context context) { super(context, "TrabalhoFinal", null, 1); }
+    public DAO(Context context) {
+        super(context, "TrabalhoFinal", null, 1);
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -46,6 +49,18 @@ public class ClientesDAO extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public void insereProduto(Produto produto){
+
+        ContentValues dados = new ContentValues();
+        dados.put("idProduto", produto.getIdProduto());
+        dados.put("marca", produto.getMarca());
+        dados.put("modelo", produto.getModelo());
+        dados.put("preco", produto.getPreco());
+
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert("tb_produtos", null, dados);
+    }
+
     public void insereCliente(Cliente cliente){
 
         ContentValues dados = new ContentValues();
@@ -57,6 +72,32 @@ public class ClientesDAO extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getWritableDatabase();
         db.insert("tb_clientes", null, dados);
+    }
+
+    public List<Produto> getProduto(){
+        String sql = "SELECT * FROM tb_produtos";
+
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+        List<Produto> arrayprodutos = new ArrayList<Produto>();
+
+        while(cursor.moveToNext()){
+            Produto produto = new Produto();
+            produto.setIdProduto(cursor.getLong(
+                    cursor.getColumnIndex("idProduto")));
+            produto.setMarca(cursor.getString(
+                    cursor.getColumnIndex("marca")));
+            produto.setModelo(cursor.getString(
+                    cursor.getColumnIndex("modelo")));
+            produto.setPreco(cursor.getString(
+                    cursor.getColumnIndex("preco")));
+
+
+            arrayprodutos.add(produto);
+        }
+
+        cursor.close();
+        return arrayprodutos;
     }
 
     public List<Cliente> getCliente(){
@@ -88,6 +129,18 @@ public class ClientesDAO extends SQLiteOpenHelper {
         return clientes;
     }
 
+    public void alteraProduto(Produto produto) {
+        ContentValues dados = new ContentValues();
+        dados.put("idProduto", produto.getIdProduto());
+        dados.put("marca", produto.getMarca());
+        dados.put("modelo", produto.getModelo());
+        dados.put("preco", produto.getPreco());
+
+        SQLiteDatabase db = getWritableDatabase();
+        String[] params = {String.valueOf(produto.getIdProduto())};
+        db.update("tb_produtos", dados, "idProduto = ?", params);
+    }
+
     public void alteraCliente(Cliente cliente) {
         ContentValues dados = new ContentValues();
         dados.put("nome", cliente.getNome());
@@ -99,6 +152,12 @@ public class ClientesDAO extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         String[] params = {String.valueOf(cliente.getIdCliente())};
         db.update("tb_clientes", dados, "idCliente = ?", params);
+    }
+
+    public void deletaProduto(Produto produto) {
+        SQLiteDatabase db = getWritableDatabase();
+        String[] params = {String.valueOf(produto.getIdProduto())};
+        db.delete("tb_produtos", "idProduto = ?", params);
     }
 
     public void deletaCliente(Cliente cliente) {

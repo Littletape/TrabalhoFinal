@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.example.aluno.trabalhofinal.Helper.FormHelperProduto;
 import com.example.aluno.trabalhofinal.Model.Produto;
-import com.example.aluno.trabalhofinal.dao.ProdutosDAO;
+import com.example.aluno.trabalhofinal.dao.DAO;
 
 public class CadProdutosActivity extends AppCompatActivity {
     private FormHelperProduto helper;
@@ -35,7 +35,7 @@ public class CadProdutosActivity extends AppCompatActivity {
     public void onClickSalvar(View view){
         Produto produto = helper.getProduto();
 
-        ProdutosDAO dao = new ProdutosDAO(this);
+        DAO dao = new DAO(this);
 
         if(alterar){
             produto.setIdProduto(idProduto);
