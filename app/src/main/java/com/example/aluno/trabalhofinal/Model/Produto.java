@@ -42,10 +42,7 @@ public class Produto implements Serializable {
     public void setPreco(String preco) {
         this.preco = preco;
     }
-}
 
     @Override
-    public String toString() {
-        return getIdProduto() + " - " + getMarca();
-    }
+    public String toString() { return getIdProduto() + " - " + getMarca(); }
 }

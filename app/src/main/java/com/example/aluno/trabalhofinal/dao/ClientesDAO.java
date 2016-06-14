@@ -21,20 +21,28 @@ public class ClientesDAO extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE tb_clientes " +
+        String sqlClientes = "CREATE TABLE tb_clientes " +
                 "(idCliente INTEGER PRIMARY KEY, " +
                 "nome TEXT NOT NULL, " +
                 "email TEXT, " +
                 "telefone TEXT, " +
                 "data TEXT," +
                 "sexo TEXT)";
-        db.execSQL(sql);
+        String sqlProdutos = "CREATE TABLE tb_produtos " +
+                "(idProduto INTEGER PRIMARY KEY, " +
+                "marca TEXT NOT NULL, " +
+                "modelo TEXT, " +
+                "preco TEXT)";
+        db.execSQL(sqlClientes);
+        db.execSQL(sqlProdutos);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "DROP TABLE IF EXIST tb_clientes";
-        db.execSQL(sql);
+        String sqlClientes = "DROP TABLE IF EXIST tb_clientes";
+        String sqlProdutos = "DROP TABLE IF EXIST tb_produtos";
+        db.execSQL(sqlClientes);
+        db.execSQL(sqlProdutos);
         onCreate(db);
     }
 
