@@ -52,7 +52,6 @@ public class DAO extends SQLiteOpenHelper {
     public void insereProduto(Produto produto){
 
         ContentValues dados = new ContentValues();
-        dados.put("idProduto", produto.getIdProduto());
         dados.put("marca", produto.getMarca());
         dados.put("modelo", produto.getModelo());
         dados.put("preco", produto.getPreco());

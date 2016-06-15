@@ -18,6 +18,10 @@
         android:id="@+id/txtListaDesejos"
         android:layout_gravity="center_horizontal" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,10 +29,18 @@
         android:text="Cliente"
         android:id="@+id/txtCliente" />
 
-    <ExpandableListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ExpandableListView>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_weight="1" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,9 +48,13 @@
         android:text="Produto"
         android:id="@+id/txtProduto" />
 
-    <ExpandableListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ExpandableListView>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"
+            android:layout_weight="1" />
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,30 +64,28 @@
         android:id="@+id/txtValorMin" />
 
 
-    <EditText
+    <NumberPicker
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/etValorMin"
-        android:layout_gravity="right"
-        android:scrollIndicators="bottom|top" />
+        android:layout_height="70dp"
+        android:id="@+id/numberPicker"
+        android:scrollIndicators="top|bottom"
+        android:orientation="vertical" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Valor Máximo R$"
-        android:id="@+id/txtValorMax" />
+        android:id="@+id/txtValorMax"
+        android:scrollIndicators="top" />
 
-    <EditText
+    <NumberPicker
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/etValorMax"
-        android:layout_gravity="right"
-        android:scrollIndicators="bottom|top" />
+        android:layout_height="70dp"
+        android:id="@+id/numberPicker2"
+        android:scrollIndicators="top"
+        android:transitionGroup="true"
+        android:orientation="vertical" />
 
     <Button
         android:layout_width="match_parent"
