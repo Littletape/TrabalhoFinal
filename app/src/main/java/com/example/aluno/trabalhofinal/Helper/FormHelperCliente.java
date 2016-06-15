@@ -36,7 +36,13 @@ public class FormHelperCliente {
         cliente.setEmail(String.valueOf(etEmail.getText()));
         cliente.setTelefone(String.valueOf(etTelefone.getText()));
         cliente.setData(String.valueOf(etData.getText()));
-        cliente.setSexo(String.valueOf(rgSexo.getCheckedRadioButtonId()));
+        switch (rgSexo.getCheckedRadioButtonId()){
+            case R.id.rbFeminino:
+                cliente.setSexo(String.valueOf("Feminino"));
+                break;
+            case R.id.rbMasculino:
+                cliente.setSexo(String.valueOf("Masculino"));
+        }
     return cliente;
     }
 
@@ -44,13 +50,8 @@ public class FormHelperCliente {
         etNome.setText(cliente.getNome());
         etEmail.setText(cliente.getEmail());
         etTelefone.setText(cliente.getTelefone());
-        etData.setText(cliente.getEmail());
+        etData.setText(cliente.getData());
         //rgSexo.setText(cliente.getSexo());
-        switch (rgSexo.getCheckedRadioButtonId()){
-            case R.id.rbFeminino:
-                sexo = "Feminino";
-            case R.id.rbMasculino:
-                sexo = "Masculino";
-        }
+
     }
 }
