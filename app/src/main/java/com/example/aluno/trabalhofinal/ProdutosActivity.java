@@ -31,7 +31,7 @@ public class ProdutosActivity extends AppCompatActivity {
                 Produto produto = (Produto) lvProdutos.getItemAtPosition(position);
 
                 Intent intent = new Intent(ProdutosActivity.this, CadProdutosActivity.class);
-                intent.putExtra("produtos", produto);
+                intent.putExtra("produto", produto);
                 startActivity(intent);
             }
         });

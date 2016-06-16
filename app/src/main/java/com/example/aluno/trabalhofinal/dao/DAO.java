@@ -164,4 +164,53 @@ public class DAO extends SQLiteOpenHelper {
         String[] params = {String.valueOf(cliente.getIdCliente())};
         db.delete("tb_clientes", "idCliente = ?", params);
     }
+
+    public ArrayList<String> spClientes () {
+        ArrayList<String> list = new ArrayList<String>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.beginTransaction();
+        try {
+            String sql = "SELECT * FROM tb_clientes";
+            Cursor cursor = db.rawQuery(sql, null);
+            if (cursor.getCount() > 0) {
+                while (cursor.moveToNext()) {
+                    String nome = cursor.getString(cursor.getColumnIndex("nome"));
+                    list.add(nome);
+                }
+            }
+            db.setTransactionSuccessful();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally{
+            db.endTransaction();
+            db.close();
+        }
+        return list;
+    }
+
+    public ArrayList<String> spProdutos() {
+        ArrayList<String> list = new ArrayList<String>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.beginTransaction();
+        try {
+            String sql = "SELECT * FROM tb_produtos";
+            Cursor cursor = db.rawQuery(sql, null);
+            if (cursor.getCount() > 0) {
+                while (cursor.moveToNext()) {
+                    String marca = cursor.getString(cursor.getColumnIndex("marca"));
+                    list.add(marca);
+                }
+            }
+            db.setTransactionSuccessful();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally{
+            db.endTransaction();
+            db.close();
+        }
+        return list;
+    }
+
 }
