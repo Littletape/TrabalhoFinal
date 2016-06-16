@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.aluno.trabalhofinal.Helper.FormHelperCliente;
@@ -14,11 +15,15 @@ public class InfPessoaisActivity extends AppCompatActivity {
     private FormHelperCliente helper;
     private boolean alterar;
     private long idCliente;
+    private RadioButton rbMasculino, rbFeminino;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inf_pessoais);
+
+        rbMasculino = (RadioButton)findViewById(R.id.rbMasculino);
+        rbFeminino = (RadioButton)findViewById(R.id.rbFeminino);
 
         Intent intent = getIntent();
         helper = new FormHelperCliente(this);
@@ -27,6 +32,11 @@ public class InfPessoaisActivity extends AppCompatActivity {
             alterar = true;
             idCliente = cliente.getIdCliente();
             helper.setCliente(cliente);
+            switch (cliente.getSexo()){
+                case "Masculino": rbMasculino.setChecked(true); break;
+                case "Feminino": rbFeminino.setChecked(true); break;
+            }
+            Toast.makeText(this, "sexo " + cliente.getSexo(), Toast.LENGTH_LONG).show();
         }
         else {
             alterar = false;
