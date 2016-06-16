@@ -21,7 +21,7 @@ public class CadProdutosActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         helper = new FormHelperProduto(this);
-        Produto produto = (Produto)intent.getSerializableExtra("cliente");
+        Produto produto = (Produto)intent.getSerializableExtra("produto");
         if(produto != null){
             alterar = true;
             idProduto = produto.getIdProduto();
