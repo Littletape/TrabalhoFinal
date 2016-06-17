@@ -65,6 +65,7 @@
         android:id="@+id/etData" />
 
         <ImageButton
+            android:src="@mipmap/calendar"
             android:layout_width="45dp"
             android:layout_height="match_parent"
             android:id="@+id/btcalendar"
