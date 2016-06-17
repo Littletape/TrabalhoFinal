@@ -64,13 +64,11 @@
         android:ems="10"
         android:id="@+id/etData" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_gravity="right" />
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btcalendar"
+            android:onClick="setListFooter" />
 
     </LinearLayout>
 
