@@ -35,7 +35,7 @@ public class DAO extends SQLiteOpenHelper {
                 "(idProduto INTEGER PRIMARY KEY, " +
                 "marca TEXT NOT NULL, " +
                 "modelo TEXT, " +
-                "preco TEXT)";
+                "preco INTEGER)";
         db.execSQL(sqlClientes);
         db.execSQL(sqlProdutos);
     }
