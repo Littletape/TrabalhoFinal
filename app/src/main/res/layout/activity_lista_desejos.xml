@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Lista de Desejos"
+        android:text="@string/Lista_de_Desejos"
         android:id="@+id/txtListaDesejos"
         android:layout_gravity="center_horizontal" />
 
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Cliente"
+        android:text="@string/Cliente"
         android:id="@+id/txtCliente" />
 
         <Spinner
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Produto"
+        android:text="@string/Produto"
         android:id="@+id/txtProduto" />
 
         <Spinner
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Valor Minimo R$"
+        android:text="@string/Valor_Minimo_R$"
         android:id="@+id/txtValorMin" />
 
 
@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Valor Máximo R$"
+        android:text="@string/Valor_Máximo_R$"
         android:id="@+id/txtValorMax"
         android:scrollIndicators="top" />
 
@@ -92,7 +92,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar E-Mail"
+        android:text="@string/Enviar_E_Mail"
         android:id="@+id/btEMail"
         android:layout_marginTop="100dp"
         android:background="#3F51B5"
@@ -102,7 +102,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Telefonar"
+        android:text="@string/Telefonar"
         android:id="@+id/btTelefonar"
         android:layout_marginTop="20dp"
         android:background="#3F51B5"

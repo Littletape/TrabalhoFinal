@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Nome:"
+        android:text="@string/Nome"
         android:id="@+id/txtNome" />
 
     <EditText
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="E-Mail:"
+        android:text="@string/E_Mail"
         android:id="@+id/txtEMail" />
 
     <EditText
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Telefone:"
+        android:text="@string/Telefone"
         android:id="@+id/txtTelefone" />
 
     <EditText
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Data de Nascimento:"
+        android:text="@string/Data_de_Nascimento"
         android:id="@+id/txtNascimento" />
 
     <LinearLayout
@@ -89,7 +89,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Masculino"
+                android:text="@string/Masculino"
                 android:checked="true"
                 android:id="@+id/rbMasculino"
                 android:layout_marginRight="50dp"/>
@@ -97,7 +97,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Femino"
+                android:text="@string/Femino"
                 android:checked="false"
                 android:id="@+id/rbFeminino" />
         </RadioGroup>
@@ -105,7 +105,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Salvar"
+        android:text="@string/Salvar"
         android:id="@+id/btSalvar"
         android:layout_marginTop="50dp"
         android:background="#3F51B5"

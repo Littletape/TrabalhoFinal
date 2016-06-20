@@ -31,7 +31,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Novo"
+        android:text="@string/Novo"
         android:layout_marginLeft="60dp"
         android:width="120dp"
         android:id="@+id/btNovo"
@@ -42,7 +42,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alterar"
+        android:text="@string/Alterar"
         android:layout_marginLeft="20dp"
         android:width="120dp"
         android:id="@+id/btAlterar"
